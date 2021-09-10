@@ -1,0 +1,18 @@
+<h2>Disciplinas</h2>
+
+<div>
+  <p>Insira uma nova disciplina:</p>
+  <input #title type="text" />
+  <button (click)="this.disciplinas.add(title.value); title.value='';">
+    +
+  </button>
+</div>
+
+<ul>
+  <li *ngFor="let disciplina of this.disciplinas.getList(); index as i">
+    {{disciplina}}
+    <button (click)="this.disciplinas.remove(i)">
+      -
+    </button>
+  </li>
+</ul>
